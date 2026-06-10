@@ -1,0 +1,2063 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BouMatic Robotics | Premium Dairy Systems Concept</title>
+  <meta name="description" content="Premium BouMatic concept page for dairy robotics, product categories, dealer support and practical farm planning.">
+  <style>
+    :root {
+      --orange: #EE7523;
+      --blue: #0079C2;
+      --navy: #1d5288;
+      --deep: #061423;
+      --ink: #122033;
+      --muted: #647386;
+      --line: #d9e1ea;
+      --soft: #f3f6f9;
+      --white: #ffffff;
+      --radius: 8px;
+      --shadow: 0 24px 70px rgba(6, 20, 35, .16);
+      --max: 1360px;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: auto;
+      scroll-padding-top: 96px;
+    }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+    body.no-scroll { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    p { font-size: 17px; line-height: 1.62; margin: 0; }
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+    h1, h2, h3 { margin: 0; line-height: 1.02; letter-spacing: 0; }
+    h1 { font-size: clamp(58px, 5vw, 88px); color: var(--white); }
+    h2 { font-size: clamp(42px, 3.6vw, 56px); }
+    h3 { font-size: 25px; }
+
+    .container {
+      width: min(calc(100% - 64px), var(--max));
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--orange);
+    }
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-weight: 900;
+      line-height: 1;
+      transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: var(--white);
+      background: var(--orange);
+      box-shadow: 0 16px 36px rgba(238, 117, 35, .28);
+    }
+    .btn-primary:hover { background: #f5822f; }
+    .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255,255,255,.34);
+      background: rgba(255,255,255,.06);
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.12); }
+    .btn-outline {
+      color: var(--navy);
+      border-color: rgba(29,82,136,.28);
+      background: var(--white);
+    }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .text-link::after {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--orange);
+      transition: width .25s ease;
+    }
+    .text-link:hover::after { width: 42px; }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 90;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(180deg, rgba(6,20,35,.7), rgba(6,20,35,.08));
+      transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .site-header.is-scrolled,
+    .site-header.is-open {
+      color: var(--ink);
+      background: #fff;
+      border-bottom-color: rgba(29,82,136,.16);
+      box-shadow: 0 16px 42px rgba(12,33,55,.08);
+    }
+    .nav {
+      height: 82px;
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand {
+      width: 176px;
+      display: inline-grid;
+      align-items: center;
+    }
+    .brand-logo { grid-area: 1 / 1; width: 176px; height: auto; }
+    .brand-logo-dark { display: none; }
+    .site-header.is-scrolled .brand-logo-light,
+    .site-header.is-open .brand-logo-light { display: none; }
+    .site-header.is-scrolled .brand-logo-dark,
+    .site-header.is-open .brand-logo-dark { display: block; }
+    .nav-links {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      min-width: 0;
+    }
+    .nav-links > a,
+    .nav-trigger {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+      padding: 0;
+    }
+    .nav-trigger::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: -4px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      opacity: .8;
+    }
+    .nav-links > a:hover,
+    .nav-trigger:hover { color: var(--orange); }
+    .nav-item { height: 100%; display: inline-flex; align-items: center; }
+    .mega-menu {
+      position: fixed;
+      top: 82px;
+      left: 50%;
+      width: min(1120px, calc(100vw - 56px));
+      transform: translateX(-50%) translateY(12px);
+      opacity: 0;
+      pointer-events: none;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px),
+        #071322;
+      background-size: 96px 96px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: var(--radius);
+      box-shadow: 0 34px 90px rgba(0,0,0,.36);
+      transition: opacity .2s ease, transform .2s ease;
+      overflow: hidden;
+    }
+    .mega-menu.compact { width: min(820px, calc(100vw - 56px)); }
+    .nav-item:hover .mega-menu,
+    .nav-item:focus-within .mega-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      padding: 30px;
+    }
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .mega-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .mega-column { display: grid; align-content: start; gap: 15px; }
+    .mega-column h3,
+    .mega-title {
+      margin: 0 0 6px;
+      color: var(--blue);
+      font-size: 13px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .mega-column a { display: grid; gap: 2px; }
+    .mega-column strong { font-size: 16px; line-height: 1.22; }
+    .mega-column span,
+    .mega-footer span,
+    .mega-feature span {
+      color: rgba(255,255,255,.58);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .mega-column a:hover strong { color: var(--orange); }
+    .mega-feature {
+      min-height: 330px;
+      display: grid;
+      align-content: end;
+      gap: 8px;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(0deg, rgba(6,20,35,.92), rgba(6,20,35,.12)),
+        url("assets/optimized/romsdal-1600.jpg") center/cover;
+    }
+    .mega-feature.products {
+      background:
+        linear-gradient(0deg, rgba(6,20,35,.92), rgba(6,20,35,.1)),
+        url("assets/optimized/gemini-inside-1400.jpg") center/cover;
+    }
+    .mega-feature small {
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .mega-feature strong { font-size: 22px; line-height: 1.04; }
+    .mega-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+    .mega-footer a { color: var(--blue); font-weight: 900; }
+    .nav-actions { display: flex; align-items: center; justify-content: flex-end; }
+    .nav-actions .btn { min-height: 52px; }
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      color: inherit;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius);
+    }
+    .site-header.is-scrolled .menu-toggle,
+    .site-header.is-open .menu-toggle {
+      background: var(--white);
+      border-color: rgba(29,82,136,.22);
+    }
+    .menu-toggle span {
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+    }
+    .mobile-panel { display: none; }
+    .site-header.is-mobile-layout .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header.is-mobile-layout .nav-links,
+    .site-header.is-mobile-layout .nav-actions { display: none; }
+    .site-header.is-mobile-layout .menu-toggle {
+      display: inline-flex !important;
+      position: fixed;
+      top: 14px;
+      right: 20px;
+      z-index: 999;
+      color: #fff !important;
+      background: rgba(6,20,35,.82) !important;
+      border-color: rgba(255,255,255,.78) !important;
+      box-shadow: 0 14px 34px rgba(0,0,0,.24);
+    }
+
+    main { background: var(--white); }
+    section { position: relative; }
+    .hero {
+      z-index: 0;
+      min-height: clamp(760px, 100svh, 980px);
+      height: auto;
+      max-height: none;
+      color: var(--white);
+      overflow: hidden;
+      background: var(--deep);
+    }
+    .hero-media,
+    .hero-media img,
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+      will-change: transform;
+    }
+    .hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(6,20,35,.96) 0%, rgba(6,20,35,.76) 38%, rgba(6,20,35,.26) 72%, rgba(6,20,35,.12) 100%),
+        linear-gradient(0deg, rgba(6,20,35,.6), rgba(6,20,35,.05) 42%);
+    }
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      opacity: .22;
+      background:
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 120px 120px;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,.8), transparent 82%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: clamp(760px, 100svh, 980px);
+      display: grid;
+      align-content: center;
+      padding: clamp(100px, 13svh, 132px) 0 clamp(30px, 6svh, 70px);
+    }
+    .hero-content { width: min(680px, 100%); }
+    .hero-content .eyebrow { margin-bottom: clamp(14px, 2.6svh, 26px); }
+    .hero-title span { display: block; }
+    .hero-title .subline {
+      margin-top: clamp(8px, 1.8svh, 16px);
+      color: rgba(255,255,255,.84);
+      font-size: clamp(31px, 2.8vw, 42px);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+    .hero-copy {
+      width: min(620px, 100%);
+      margin-top: clamp(14px, 2.7svh, 24px);
+      color: rgba(255,255,255,.82);
+      font-size: clamp(17px, 1.25vw, 20px);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: clamp(22px, 3.8svh, 34px);
+      flex-wrap: wrap;
+    }
+    .hero-proof {
+      width: min(700px, 100%);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: clamp(26px, 5svh, 48px);
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(6,20,35,.36);
+    }
+    .proof-item {
+      min-height: 68px;
+      display: grid;
+      align-content: center;
+      padding: 12px 20px;
+      border-right: 1px solid rgba(255,255,255,.16);
+    }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong {
+      display: block;
+      color: var(--white);
+      font-size: clamp(22px, 1.9vw, 28px);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .proof-item span {
+      color: rgba(255,255,255,.6);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .categories {
+      position: relative;
+      z-index: 1;
+      padding: 92px 0 110px;
+      background:
+        linear-gradient(180deg, #fff, #f6f8fb);
+      overflow: hidden;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(280px, .9fr) minmax(320px, .7fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .section-head .eyebrow { margin-bottom: 16px; }
+    .section-head p { color: var(--muted); }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      align-items: stretch;
+      overflow: visible;
+      border-top: 1px solid rgba(29,82,136,.14);
+      border-bottom: 1px solid rgba(29,82,136,.14);
+      background: transparent;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(29,82,136,.32) transparent;
+    }
+    .category-grid::-webkit-scrollbar {
+      height: 4px;
+    }
+    .category-grid::-webkit-scrollbar-thumb {
+      background: rgba(29,82,136,.32);
+      border-radius: 99px;
+    }
+    .category-card {
+      position: relative;
+      min-width: 0;
+      min-height: 126px;
+      display: grid;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      gap: 16px;
+      padding: 24px 10px;
+      color: var(--ink);
+      background: transparent;
+      text-align: center;
+      transition: color .25s ease, transform .25s ease;
+    }
+    .category-card::after {
+      content: "";
+      position: absolute;
+      left: 18%;
+      right: 18%;
+      bottom: -1px;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .25s ease;
+    }
+    .category-card:hover {
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+    .category-card:hover::after { transform: scaleX(1); }
+    .category-icon {
+      width: 50px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .category-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(28%) sepia(50%) saturate(1474%) hue-rotate(178deg) brightness(88%) contrast(89%);
+      opacity: .9;
+      transition: filter .25s ease, opacity .25s ease, transform .25s ease;
+    }
+    .category-card:hover .category-icon img {
+      filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(1313%) hue-rotate(347deg) brightness(99%) contrast(90%);
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+    .category-card h3 {
+      font-size: 15px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .robotics {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      background: #061423;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .robotics::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 110px 110px;
+      opacity: .34;
+      pointer-events: none;
+    }
+    .robotics-intro {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(360px, .9fr) minmax(320px, .7fr);
+      gap: 80px;
+      align-items: end;
+      padding: 110px 0 90px;
+    }
+    .robotics-intro h2 { color: var(--white); margin-top: 18px; }
+    .robotics-intro p { color: rgba(255,255,255,.68); }
+    .robotics-intro .btn { justify-self: start; margin-top: 28px; }
+    .robotics-pin {
+      position: relative;
+      z-index: 3;
+      min-height: 640px;
+      height: min(900px, calc(100svh - 82px));
+      max-height: 900px;
+      display: grid;
+      align-items: center;
+      padding: clamp(30px, 4.6svh, 66px) 0 clamp(34px, 5svh, 70px);
+      background: #061423;
+      overflow: hidden;
+    }
+    .robotics-stage {
+      width: min(calc(100% - 48px), 1740px);
+      max-width: none;
+      display: grid;
+      grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+      gap: clamp(42px, 4.5vw, 76px);
+      align-items: center;
+      height: 100%;
+    }
+    .robot-copy {
+      min-height: auto;
+      display: grid;
+      align-content: center;
+      gap: clamp(12px, 2svh, 18px);
+      position: relative;
+      z-index: 3;
+      will-change: opacity, transform;
+    }
+    .robot-copy small {
+      color: var(--orange);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .robot-copy h3 {
+      color: var(--white);
+      font-size: clamp(38px, 3.2vw, 50px);
+    }
+    .robot-copy p { color: rgba(255,255,255,.7); }
+    .robot-specs {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .robot-specs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.8);
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .robot-specs span::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+    .robot-controls {
+      display: grid;
+      gap: 0;
+      margin-top: clamp(18px, 3svh, 30px);
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+    .robot-tab {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 12px;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.58);
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: left;
+      transition: color .25s ease, padding-left .25s ease;
+    }
+    .robot-tab::before {
+      content: attr(data-count);
+      color: rgba(0,121,194,.82);
+      font-size: 12px;
+      letter-spacing: 0;
+      transition: color .25s ease;
+    }
+    .robot-tab.is-active {
+      color: var(--white);
+      background: transparent;
+      padding-left: 12px;
+      box-shadow: inset 3px 0 0 var(--orange);
+    }
+    .robot-tab.is-active::before {
+      color: var(--orange);
+    }
+    .robotics-window {
+      overflow: hidden;
+      height: clamp(470px, calc(100svh - 190px), 660px);
+      padding: 0;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      scrollbar-width: none;
+      perspective: 1200px;
+    }
+    .robotics-window::before,
+    .robotics-window::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 6%;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .robotics-window::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(6,20,35,.48), rgba(6,20,35,0));
+    }
+    .robotics-window::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(6,20,35,.48), rgba(6,20,35,0));
+    }
+    .robotics-window::-webkit-scrollbar { display: none; }
+    .robot-track {
+      --robot-card-width: clamp(590px, 47vw, 860px);
+      display: flex;
+      align-items: center;
+      gap: clamp(42px, 4vw, 76px);
+      padding-inline: 0 max(260px, 24vw);
+      will-change: transform;
+      transform-style: preserve-3d;
+    }
+    .robot-card {
+      flex: 0 0 var(--robot-card-width);
+      height: clamp(430px, calc(100svh - 205px), 670px);
+      position: relative;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      overflow: hidden;
+      transform: translateZ(0) scale(.9);
+      transform-origin: center center;
+      opacity: .42;
+      transition: none;
+      contain: layout paint;
+      filter: none;
+      will-change: transform, opacity;
+    }
+    .robot-card.is-active {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: none;
+    }
+    .robot-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,.16);
+      pointer-events: none;
+      opacity: .18;
+    }
+    .robot-image {
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      position: relative;
+    }
+    .robot-image::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 30%;
+      background:
+        linear-gradient(0deg, rgba(6,20,35,.5), rgba(6,20,35,0));
+      pointer-events: none;
+    }
+    .robot-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: none;
+      will-change: transform;
+      backface-visibility: hidden;
+      image-rendering: auto;
+    }
+    .robot-body {
+      position: absolute;
+      left: clamp(22px, 3vw, 38px);
+      right: clamp(22px, 3vw, 38px);
+      bottom: clamp(20px, 3svh, 34px);
+      z-index: 1;
+      padding: 0;
+      background: transparent;
+      will-change: transform, opacity;
+    }
+    .robot-body small {
+      display: block;
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .robot-body h3 {
+      color: var(--white);
+      font-size: clamp(28px, 2.2vw, 38px);
+      margin-bottom: 10px;
+    }
+    .robot-body p {
+      color: rgba(255,255,255,.66);
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 520px;
+    }
+    .robotics-progress {
+      position: absolute;
+      left: max(32px, calc((100vw - var(--max)) / 2));
+      right: max(32px, calc((100vw - var(--max)) / 2));
+      bottom: 24px;
+      height: 3px;
+      background: rgba(255,255,255,.16);
+      transform: translateZ(0);
+      overflow: hidden;
+    }
+    .robotics-progress span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    .testimonials {
+      padding: 110px 0;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .testimonial-shell {
+      display: grid;
+      grid-template-columns: minmax(320px, .72fr) minmax(0, 1fr);
+      gap: 54px;
+      align-items: center;
+    }
+    .testimonial-media {
+      min-height: 580px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(0deg, rgba(6,20,35,.74), rgba(6,20,35,.1)),
+        url("assets/optimized/service-hygiene-1800.jpg") center/cover;
+      box-shadow: var(--shadow);
+    }
+    .testimonial-media::after {
+      content: "Dealer-led support";
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      padding: 12px 14px;
+      color: var(--white);
+      background: rgba(6,20,35,.84);
+      border-left: 4px solid var(--orange);
+      font-weight: 900;
+    }
+    .testimonial-panel {
+      min-height: 500px;
+      display: grid;
+      align-content: center;
+    }
+    .testimonial-card {
+      display: none;
+      gap: 22px;
+    }
+    .testimonial-card.is-active { display: grid; }
+    .testimonial-card small {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .testimonial-card h2 {
+      width: min(680px, 100%);
+      color: var(--ink);
+    }
+    .testimonial-card p {
+      width: min(660px, 100%);
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .testimonial-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 16px 0 8px;
+    }
+    .testimonial-meta span {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--orange);
+      color: var(--navy);
+      font-weight: 900;
+      background: #fbfcfd;
+    }
+    .testimonial-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .icon-btn {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 900;
+      transition: border-color .25s ease, color .25s ease, transform .25s ease;
+    }
+    .icon-btn:hover {
+      color: var(--orange);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .dealer {
+      padding: 112px 0;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(6,20,35,.96), rgba(6,20,35,.88)),
+        url("assets/optimized/dealer-bg-1800.jpg") center/cover;
+    }
+    .dealer-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, .8fr) minmax(320px, .7fr);
+      gap: 70px;
+      align-items: center;
+    }
+    .dealer h2 { color: var(--white); margin-top: 16px; }
+    .dealer p { color: rgba(255,255,255,.72); margin-top: 18px; }
+    .dealer-tool {
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.08);
+      box-shadow: 0 26px 80px rgba(0,0,0,.22);
+    }
+    .dealer-form {
+      display: flex;
+      gap: 10px;
+    }
+    .dealer-form input,
+    .newsletter-form input {
+      width: 100%;
+      min-height: 54px;
+      padding: 0 16px;
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius);
+      background: var(--white);
+      outline: 0;
+    }
+    .dealer-result {
+      min-height: 118px;
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      background: rgba(6,20,35,.4);
+    }
+    .dealer-result small {
+      color: var(--orange);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .dealer-result strong { font-size: 22px; }
+    .dealer-result span { color: rgba(255,255,255,.68); line-height: 1.45; }
+
+    .site-footer {
+      color: var(--white);
+      background: #061423;
+      padding: 76px 0 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 96px 96px;
+      opacity: .36;
+    }
+    .footer-content { position: relative; z-index: 1; }
+    .newsletter {
+      display: grid;
+      grid-template-columns: minmax(320px, .75fr) minmax(320px, .8fr);
+      gap: 44px;
+      align-items: center;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .newsletter h2 {
+      color: var(--white);
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+    .newsletter p { color: rgba(255,255,255,.64); }
+    .newsletter-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+    .newsletter-message {
+      color: rgba(255,255,255,.66);
+      margin-top: 10px;
+      font-size: 14px;
+      min-height: 20px;
+      grid-column: 1 / -1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 1.1fr) repeat(3, minmax(160px, .55fr));
+      gap: 62px;
+      padding: 48px 0;
+    }
+    .footer-brand img { width: 210px; margin-bottom: 28px; }
+    .footer-brand p { color: rgba(255,255,255,.62); max-width: 380px; }
+    .footer-col {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+    }
+    .footer-col h3 {
+      color: var(--white);
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .footer-col a { color: rgba(255,255,255,.68); }
+    .footer-col a:hover { color: var(--orange); }
+    .legal {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: rgba(255,255,255,.48);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding-top: 24px;
+    }
+
+    .gsap-reveal {
+      opacity: 1;
+      transform: none;
+    }
+    .section-wipe {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      transform-origin: left center;
+      transform: scaleX(0);
+      background: var(--orange);
+      pointer-events: none;
+    }
+
+    @media (max-width: 1280px) {
+      .nav {
+        grid-template-columns: 180px minmax(0, 1fr) auto;
+        gap: 18px;
+      }
+      .brand,
+      .brand-logo { width: 158px; }
+      .nav-links { gap: 13px; }
+      .nav-links > a,
+      .nav-trigger { font-size: 13px; }
+      h1 { font-size: 72px; }
+      h2 { font-size: 48px; }
+      .robot-track { --robot-card-width: min(520px, 50vw); }
+    }
+
+    @media (max-width: 1280px) {
+      .container { width: min(calc(100% - 40px), var(--max)); }
+      .nav {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand { flex: 0 0 auto; }
+      .nav-links,
+      .nav-actions { display: none; }
+      .menu-toggle {
+        display: inline-flex !important;
+        position: fixed;
+        top: 14px;
+        right: 20px;
+        flex: 0 0 48px;
+        z-index: 999;
+        color: #fff !important;
+        background: rgba(6,20,35,.82) !important;
+        border-color: rgba(255,255,255,.78) !important;
+        box-shadow: 0 14px 34px rgba(0,0,0,.24);
+      }
+      .mobile-panel {
+        position: fixed;
+        top: 76px;
+        left: 20px;
+        right: 20px;
+        max-height: calc(100svh - 96px);
+        overflow-y: auto;
+        padding: 22px;
+        color: var(--ink);
+        background: rgba(255,255,255,.98);
+        border: 1px solid rgba(29,82,136,.16);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .site-header.is-open .mobile-panel { display: grid; gap: 18px; }
+      .mobile-group {
+        display: grid;
+        gap: 8px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e7edf4;
+      }
+      .mobile-group:last-child { border-bottom: 0; }
+      .mobile-group strong {
+        color: var(--blue);
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .mobile-group a {
+        color: var(--ink);
+        font-weight: 900;
+        padding: 7px 0;
+      }
+      .section-head,
+      .robotics-intro,
+      .robotics-stage,
+      .testimonial-shell,
+      .dealer-grid,
+      .newsletter,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .robotics-stage { gap: 28px; }
+      .robot-copy {
+        min-height: auto;
+        max-width: 720px;
+      }
+      .robot-controls {
+        display: flex;
+        gap: 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 8px 0;
+        border-top: 1px solid rgba(255,255,255,.14);
+        border-bottom: 1px solid rgba(255,255,255,.14);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,.28) transparent;
+      }
+      .robot-tab {
+        flex: 0 0 auto;
+        min-height: 34px;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        border-bottom: 0;
+        padding: 0 2px;
+      }
+      .robot-tab.is-active {
+        padding-left: 0;
+        box-shadow: inset 0 -2px 0 var(--orange);
+      }
+      .robotics-window {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 24px;
+        height: auto;
+      }
+      .robot-track {
+        padding-inline: 0 20px;
+      }
+      .robot-card {
+        flex: 0 0 min(560px, 82vw);
+        height: auto;
+        min-height: 0;
+        scroll-snap-align: center;
+        transform: none;
+        opacity: 1;
+        filter: none;
+      }
+      .robot-card.is-active { transform: none; }
+      .robot-image { height: auto; min-height: 360px; }
+      .robot-image img { min-height: 360px; }
+      .testimonial-media { min-height: 440px; }
+      .category-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .category-card {
+        flex: 0 0 max-content;
+        min-width: 132px;
+      }
+    }
+
+    @media (max-height: 820px) and (min-width: 681px) {
+      .hero-inner {
+        padding: 98px 0 28px;
+      }
+      .hero-content { width: min(640px, 100%); }
+      .hero-content .eyebrow { margin-bottom: 14px; }
+      .hero-title .subline {
+        margin-top: 10px;
+        font-size: clamp(30px, 2.6vw, 34px);
+      }
+      .hero-copy {
+        margin-top: 16px;
+        font-size: 18px;
+        line-height: 1.52;
+      }
+      .hero-actions { margin-top: 22px; }
+      .hero-proof { margin-top: 28px; }
+      .proof-item {
+        min-height: 62px;
+        padding: 10px 18px;
+      }
+      .proof-item strong { font-size: 24px; }
+      .robotics-intro { padding: 82px 0 62px; }
+      .robotics-pin {
+        min-height: 0;
+        height: min(760px, calc(100svh - 82px));
+        padding: 30px 0 44px;
+      }
+      .robotics-window {
+        height: clamp(390px, calc(100svh - 178px), 560px);
+      }
+      .robot-card {
+        height: clamp(380px, calc(100svh - 210px), 540px);
+      }
+      .robot-copy h3 { font-size: clamp(34px, 3vw, 44px); }
+      .robot-copy p { line-height: 1.52; }
+      .robot-controls { margin-top: 18px; }
+      .robot-tab { min-height: 36px; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      p { font-size: 16px; }
+      h1 { font-size: 38px; line-height: 1.06; }
+      h2 { font-size: 30px; line-height: 1.08; }
+      h3 { font-size: 22px; }
+      .brand,
+      .brand-logo { width: 150px; }
+      .hero-inner { padding: 104px 0 24px; }
+      .hero {
+        min-height: 100svh;
+        max-height: none;
+      }
+      .hero-inner { min-height: 100svh; }
+      .hero-title .subline {
+        width: min(320px, 100%);
+        font-size: 22px;
+      }
+      .hero-title span:first-child,
+      .hero-copy {
+        width: min(330px, 100%);
+      }
+      .hero-title span,
+      .section-head h2,
+      .robotics-intro h2,
+      .robot-copy h3 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
+      .hero-copy { font-size: 17px; }
+      .hero-actions,
+      .dealer-form {
+        flex-direction: column;
+      }
+      .newsletter-form { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+      .hero-proof {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 24px;
+      }
+      .proof-item {
+        min-height: 62px;
+        padding: 10px 8px;
+        border-right: 1px solid rgba(255,255,255,.16);
+        border-bottom: 0;
+        text-align: center;
+      }
+      .proof-item:last-child { border-right: 0; }
+      .proof-item strong {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .proof-item span {
+        font-size: 9px;
+        line-height: 1.15;
+      }
+      .categories,
+      .testimonials,
+      .dealer { padding: 74px 0; }
+      .robotics-intro { padding: 82px 0 32px; }
+      .robotics-pin {
+        min-height: auto;
+        height: auto;
+        max-height: none;
+        padding: 20px 0 72px;
+      }
+      .category-grid { margin-inline: -14px; }
+      .category-card {
+        min-width: max-content;
+        min-height: 106px;
+        padding: 18px 20px;
+      }
+      .category-icon {
+        width: 42px;
+        height: 42px;
+      }
+      .robot-card {
+        flex-basis: 86vw;
+        min-height: 0;
+      }
+      .robot-image,
+      .robot-image img { min-height: 300px; }
+      .robot-body {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+      .robot-body p { display: none; }
+      .robot-copy h3 { font-size: 34px; }
+      .testimonial-meta { grid-template-columns: 1fr; }
+      .testimonial-media { min-height: 340px; }
+      .dealer-tool { padding: 22px; }
+      .newsletter h2 { font-size: 28px; }
+      .footer-grid { gap: 34px; }
+      .legal { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .gsap-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="BouMatic home">
+        <img class="brand-logo brand-logo-light" src="logo%20(3).png" alt="BouMatic">
+        <img class="brand-logo brand-logo-dark" src="logo%20(2).png" alt="BouMatic">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">Solutions</button>
+          <div class="mega-menu">
+            <div class="mega-layout">
+              <div>
+                <div class="mega-grid">
+                  <div class="mega-column">
+                    <h3>Milking systems</h3>
+                    <a href="https://boumatic.com/robotics"><strong>Robotic Milking</strong><span>Gemini UP milking robots</span></a>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/parlor/"><strong>Rotary Parlors</strong><span>High-throughput carousel systems</span></a>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/parlor/"><strong>Conventional Milking</strong><span>Herringbone and parallel parlors</span></a>
+                  </div>
+                  <div class="mega-column">
+                    <h3>Farm management</h3>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/automation/"><strong>Herd Management</strong><span>Monitoring and farm visibility</span></a>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/cooling/"><strong>Milk Cooling</strong><span>Cooling and refrigeration systems</span></a>
+                    <a href="#dealer"><strong>Farm Planning</strong><span>Dealer-led system direction</span></a>
+                  </div>
+                  <div class="mega-column">
+                    <h3>Support</h3>
+                    <a href="#dealer"><strong>Dealer Network</strong><span>Local support close to the farm</span></a>
+                    <a href="#testimonials"><strong>Field Success</strong><span>Practical installation notes</span></a>
+                    <a href="https://boumatic.com/contact"><strong>Contact BouMatic</strong><span>Start a consultation</span></a>
+                  </div>
+                </div>
+                <div class="mega-footer"><span>Robotics, parlors, cooling and support planned as one operation.</span><a href="#categories">Explore solutions</a></div>
+              </div>
+              <a class="mega-feature" href="#robotics">
+                <small>Featured system</small>
+                <strong>BouMatic Robotics</strong>
+                <span>From milking to feeding, bedding and manure handling.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">Products</button>
+          <div class="mega-menu compact">
+            <div class="mega-layout">
+              <div>
+                <div class="mega-title">Product range</div>
+                <div class="mega-grid three" style="margin-top:20px">
+                  <div class="mega-column">
+                    <a href="#robotics"><span>Robotic</span><strong>Gemini UP</strong></a>
+                    <a href="#robotics"><span>Robotic</span><strong>Shuttle Eco</strong></a>
+                    <a href="#robotics"><span>Robotic</span><strong>Butler Gold Pro</strong></a>
+                  </div>
+                  <div class="mega-column">
+                    <a href="#robotics"><span>Robotic</span><strong>FlyPit</strong></a>
+                    <a href="#robotics"><span>Robotic</span><strong>BVS</strong></a>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/automation/"><span>Software</span><strong>Automation</strong></a>
+                  </div>
+                  <div class="mega-column">
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/parlor/"><span>Milking</span><strong>Parlor Systems</strong></a>
+                    <a href="https://boumatic.com/us_en/product-categories/us/products/cooling/"><span>Cooling</span><strong>Milk Cooling</strong></a>
+                    <a href="#categories"><span>Support</span><strong>Maintenance</strong></a>
+                  </div>
+                </div>
+                <div class="mega-footer"><span>Browse the concept product categories below.</span><a href="#categories">View categories</a></div>
+              </div>
+              <a class="mega-feature products" href="#robotics">
+                <small>Product focus</small>
+                <strong>Gemini UP</strong>
+                <span>Robotic milking with rear attachment and open view design.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#robotics">Technology</a>
+        <a href="#categories">Industries</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">Resources</button>
+          <div class="mega-menu compact">
+            <div class="mega-layout">
+              <div>
+                <div class="mega-title">Resources</div>
+                <div class="mega-grid three" style="margin-top:20px">
+                  <div class="mega-column">
+                    <a href="#testimonials"><span>Field notes</span><strong>Customer Success</strong></a>
+                    <a href="#dealer"><span>Planning</span><strong>Find a Dealer</strong></a>
+                    <a href="#robotics"><span>Robotics</span><strong>Product Range</strong></a>
+                  </div>
+                  <div class="mega-column">
+                    <a href="https://boumatic.com/news-events"><span>Updates</span><strong>News and Events</strong></a>
+                    <a href="https://boumatic.com/contact"><span>Contact</span><strong>Request Consultation</strong></a>
+                    <a href="https://www.boumatic.com/"><span>Official site</span><strong>BouMatic.com</strong></a>
+                  </div>
+                  <div class="mega-column">
+                    <a href="#newsletter"><span>Updates</span><strong>Newsletter</strong></a>
+                    <a href="#top"><span>Main page</span><strong>Back to Top</strong></a>
+                    <a href="#categories"><span>Explore</span><strong>Product Categories</strong></a>
+                  </div>
+                </div>
+                <div class="mega-footer"><span>Practical dairy automation content for planning conversations.</span><a href="#newsletter">Subscribe</a></div>
+              </div>
+              <a class="mega-feature" href="#dealer">
+                <small>Dealer path</small>
+                <strong>Plan close to the farm</strong>
+                <span>Connect product range, service rhythm and farm layout.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#dealer">Dealers</a>
+        <a href="https://boumatic.com/us_en/about-us">Company</a>
+        <a href="#dealer">Support</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#dealer">Talk to a dealer</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="mobile-panel" aria-label="Mobile navigation" id="mobilePanel">
+        <div class="mobile-group">
+          <strong>Solutions</strong>
+          <a href="#categories">Product Categories</a>
+          <a href="#robotics">Robotics Range</a>
+          <a href="#dealer">Find a Dealer</a>
+        </div>
+        <div class="mobile-group">
+          <strong>Products</strong>
+          <a href="#robotics">Gemini UP</a>
+          <a href="#robotics">Shuttle Eco</a>
+          <a href="#robotics">Butler Gold Pro</a>
+          <a href="#robotics">FlyPit and BVS</a>
+        </div>
+        <div class="mobile-group">
+          <strong>Support</strong>
+          <a href="#testimonials">Field Success</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="https://boumatic.com/contact">Contact BouMatic</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="BouMatic hero">
+      <div class="hero-media"><img src="assets/optimized/hero-romsdal-2200.jpg" alt="BouMatic Gemini UP robotic milking in a dairy barn" fetchpriority="high"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-lines"></div>
+      <div class="container hero-inner">
+        <div class="hero-content gsap-reveal">
+          <span class="eyebrow">For the life of your dairy</span>
+          <h1 class="hero-title"><span>BouMatic Robotics</span><span class="subline">Built around cows. Engineered for dairy life.</span></h1>
+          <p class="hero-copy">Robotic milking, feeding, bedding, manure handling and dealer support connected around practical farm routines.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#categories">Discover our range</a>
+            <a class="btn btn-secondary" href="#dealer">Find a dealer</a>
+          </div>
+          <div class="hero-proof" aria-label="BouMatic concept highlights">
+            <div class="proof-item"><strong>5</strong><span>Robotic systems</span></div>
+            <div class="proof-item"><strong>1</strong><span>Farm ecosystem</span></div>
+            <div class="proof-item"><strong>Dealer</strong><span>Led support</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <span class="section-wipe"></span>
+      <div class="container">
+        <div class="section-head gsap-reveal">
+          <div><span class="eyebrow">Product categories</span><h2>Find the right BouMatic system.</h2></div>
+          <p>A concise category layer for farms comparing robotics, milking systems, automation and the daily support equipment around them.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card gsap-reveal" href="#robotics">
+            <span class="category-icon"><img src="icons/robotics.svg" alt="" aria-hidden="true"></span>
+            <h3>Robotics</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="https://boumatic.com/us_en/product-categories/us/products/parlor/">
+            <span class="category-icon"><img src="icons/stalls.svg" alt="" aria-hidden="true"></span>
+            <h3>Milking Systems</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="https://boumatic.com/us_en/product-categories/us/products/automation/">
+            <span class="category-icon"><img src="icons/automation.svg" alt="" aria-hidden="true"></span>
+            <h3>Automation</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="https://boumatic.com/us_en/product-categories/us/products/cooling/">
+            <span class="category-icon"><img src="icons/equipment_hygiene.svg" alt="" aria-hidden="true"></span>
+            <h3>Cooling</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="#testimonials">
+            <span class="category-icon"><img src="icons/cow_comfort.svg" alt="" aria-hidden="true"></span>
+            <h3>Cow Comfort</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="#dealer">
+            <span class="category-icon"><img src="icons/animal_hygiene.svg" alt="" aria-hidden="true"></span>
+            <h3>Hygiene</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="#robotics">
+            <span class="category-icon"><img src="icons/manure_handling.svg" alt="" aria-hidden="true"></span>
+            <h3>Manure Handling</h3>
+          </a>
+          <a class="category-card gsap-reveal" href="#dealer">
+            <span class="category-icon"><img src="icons/Maintenance.svg" alt="" aria-hidden="true"></span>
+            <h3>Maintenance</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="robotics" id="robotics">
+      <span class="section-wipe"></span>
+      <div class="container robotics-intro">
+        <div class="gsap-reveal">
+          <span class="eyebrow">Flagship range</span>
+          <h2>Robotics for the full dairy routine.</h2>
+        </div>
+        <div class="gsap-reveal">
+          <p>Start with robotic milking, then connect feeding, bedding, manure handling and barn routines into a planning conversation with a BouMatic dealer.</p>
+          <a class="btn btn-primary" href="https://boumatic.com/robotics">View product range</a>
+        </div>
+      </div>
+      <div class="robotics-pin" id="roboticsPin">
+        <div class="container robotics-stage">
+          <aside class="robot-copy" aria-live="polite">
+            <small id="robotKicker">Robotic milking</small>
+            <h3 id="robotTitle">Gemini UP</h3>
+            <p id="robotText">Robotic milking designed around rear attachment, open view and practical single or double box farm layouts.</p>
+            <div class="robot-specs" id="robotSpecs"><span>Rear attachment</span><span>Open view</span><span>Single or double box</span></div>
+            <div class="robot-controls" id="robotTabs" aria-label="Robotics product navigation"></div>
+          </aside>
+          <div class="robotics-window" id="roboticsWindow">
+            <div class="robot-track" id="robotTrack"></div>
+          </div>
+        </div>
+        <div class="robotics-progress" aria-hidden="true"><span id="robotProgress"></span></div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <span class="section-wipe"></span>
+      <div class="container testimonial-shell">
+        <div class="testimonial-media gsap-reveal"></div>
+        <div class="testimonial-panel gsap-reveal">
+          <span class="eyebrow">Customer success</span>
+          <div class="testimonial-card is-active" data-testimonial="0">
+            <small>Field note 01</small>
+            <h2>Planning starts with the routine, not the machine.</h2>
+            <p>Dealer-led conversations map cow traffic, labor pressure, service access and cleaning rhythm before choosing the right system path.</p>
+            <div class="testimonial-meta"><span>Cow flow</span><span>Service access</span><span>Cleaning rhythm</span></div>
+          </div>
+          <div class="testimonial-card" data-testimonial="1">
+            <small>Field note 02</small>
+            <h2>Robotics works best when the barn stays understandable.</h2>
+            <p>Clear status, practical alarms and real-time activity help teams focus on follow-up instead of chasing scattered information.</p>
+            <div class="testimonial-meta"><span>Real-time activity</span><span>Simple follow-up</span><span>Daily visibility</span></div>
+          </div>
+          <div class="testimonial-card" data-testimonial="2">
+            <small>Field note 03</small>
+            <h2>Long-term confidence is built through local support.</h2>
+            <p>Installation, preventive service and parts access matter as much as the first product decision when a dairy system becomes part of daily work.</p>
+            <div class="testimonial-meta"><span>Dealer led</span><span>Parts path</span><span>Maintenance rhythm</span></div>
+          </div>
+          <a class="btn btn-outline" href="https://boumatic.com/news-events">Learn more</a>
+          <div class="testimonial-nav">
+            <button class="icon-btn" type="button" id="testimonialPrev" aria-label="Previous field note">&#8249;</button>
+            <button class="icon-btn" type="button" id="testimonialNext" aria-label="Next field note">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dealer" id="dealer">
+      <span class="section-wipe"></span>
+      <div class="container dealer-grid">
+        <div class="gsap-reveal">
+          <span class="eyebrow">Dealer network</span>
+          <h2>Find the BouMatic dealer close to your farm.</h2>
+          <p>Use this concept finder to prepare the next step. The official dealer locator remains the live source for dealer availability and contact information.</p>
+        </div>
+        <div class="dealer-tool gsap-reveal">
+          <form class="dealer-form" id="dealerForm">
+            <input id="dealerInput" type="search" placeholder="Enter city, region or country" aria-label="Dealer location">
+            <button class="btn btn-primary" type="submit">Find dealer</button>
+          </form>
+          <div class="dealer-result" id="dealerResult">
+            <small>Planning path</small>
+            <strong>Start with your location.</strong>
+            <span>Enter a place to prepare a dealer search and open the official BouMatic dealer page.</span>
+          </div>
+          <a class="btn btn-secondary" style="margin-top:18px" href="https://boumatic.com/dealers">Open official locator</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="newsletter">
+    <span class="section-wipe"></span>
+    <div class="container footer-content">
+      <div class="newsletter gsap-reveal">
+        <div>
+          <h2>Stay ahead in dairy innovation</h2>
+          <p>Product updates, dealer news and practical dairy automation insights.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </form>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo%20(3).png" alt="BouMatic">
+          <p>Premium concept page using BouMatic colors, official product direction and public BouMatic visual assets.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Products</h3>
+          <a href="#robotics">Robotics</a>
+          <a href="https://boumatic.com/us_en/products/gemini-up/">Gemini UP</a>
+          <a href="https://boumatic.com/us_en/product-categories/us/products/parlor/">Parlor</a>
+          <a href="https://boumatic.com/us_en/product-categories/us/products/cooling/">Cooling</a>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <a href="#dealer">Dealers</a>
+          <a href="https://boumatic.com/contact">Contact</a>
+          <a href="#testimonials">Field success</a>
+          <a href="#categories">All categories</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="https://boumatic.com/us_en/about-us">About BouMatic</a>
+          <a href="https://boumatic.com/news-events">News and events</a>
+          <a href="https://www.boumatic.com/">Official website</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+      <div class="legal">
+        <span>Concept page for internal review.</span>
+        <span>Colors: #1d5288, #0079C2, #EE7523</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const robotTrack = document.getElementById('robotTrack');
+    const roboticsWindow = document.getElementById('roboticsWindow');
+    const robotProgress = document.getElementById('robotProgress');
+    const robotTabs = document.getElementById('robotTabs');
+    const robotKicker = document.getElementById('robotKicker');
+    const robotTitle = document.getElementById('robotTitle');
+    const robotText = document.getElementById('robotText');
+    const robotSpecs = document.getElementById('robotSpecs');
+    const testimonialCards = Array.from(document.querySelectorAll('.testimonial-card'));
+    const dealerForm = document.getElementById('dealerForm');
+    const dealerInput = document.getElementById('dealerInput');
+    const dealerResult = document.getElementById('dealerResult');
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+
+    const roboticsProducts = [
+      {
+        name: 'Gemini UP',
+        kicker: 'Robotic milking',
+        category: 'Milking robot',
+        image: 'assets/optimized/gemini-inside-1400.jpg',
+        fallback: 'assets/optimized/romsdal-1600.jpg',
+        text: 'Robotic milking designed around rear attachment, open view and practical single or double box farm layouts.',
+        specs: ['Rear attachment', 'Open view', 'Single or double box']
+      },
+      {
+        name: 'Shuttle Eco',
+        kicker: 'Robotic feeding',
+        category: 'Feeding robot',
+        image: 'https://documents.boumatic.com/img/visuals/1_EU/1_Product/Shuttle-Eco/_featuredImage/shuttle_eco_thumbnails.jpg?v=1765809833',
+        fallback: 'assets/optimized/render-automation-1400.jpg',
+        text: 'Automatic feeding support for farms that want more regular feed routines and a cleaner daily workflow.',
+        specs: ['Feed routine', 'Farm rhythm', 'Automation path']
+      },
+      {
+        name: 'Butler Gold Pro',
+        kicker: 'Robotic feeding',
+        category: 'Feed pusher',
+        image: 'https://documents.boumatic.com/img/visuals/1_EU/1_Product/Butler-Gold/_featuredImage/buttler_gold_thumbnails.jpg?v=1765809834',
+        fallback: 'assets/optimized/render-automation-1400.jpg',
+        text: 'Robotic feed pushing designed to keep feed accessible and support more consistent barn routines.',
+        specs: ['Feed access', 'Scheduled operation', 'Barn routine']
+      },
+      {
+        name: 'FlyPit',
+        kicker: 'Robotic bedding',
+        category: 'Bedding robot',
+        image: 'flypit_thumbnails (2).jpg',
+        fallback: 'assets/optimized/render-automation-1400.jpg',
+        text: 'A bedding automation path for farms reviewing comfort routines and repeatable barn work.',
+        specs: ['Bedding routine', 'Cow comfort', 'Labor support']
+      },
+      {
+        name: 'BVS',
+        kicker: 'Manure handling',
+        category: 'Vacuum scraper',
+        image: 'https://documents.boumatic.com/img/visuals/bvs-boumatic-vacuum-scraper/_featuredImage/bvs_thumbnails_2025.jpg?v=1765809834',
+        fallback: 'assets/optimized/dealer-bg-1800.jpg',
+        text: 'Robotic manure handling support for cleaner cow traffic lanes and more regular barn maintenance.',
+        specs: ['Manure handling', 'Cow traffic', 'Barn maintenance']
+      }
+    ];
+
+    let activeRobot = 0;
+    let activeTestimonial = 0;
+    let robotScrollTrigger = null;
+    let smoothScroll = null;
+
+    function syncHeader() {
+      header.classList.toggle('is-scrolled', window.scrollY > 18);
+    }
+
+    function syncResponsiveHeader() {
+      header.classList.toggle('is-mobile-layout', window.innerWidth <= 1280);
+    }
+
+    function setActiveRobot(index, animateCopy = true) {
+      const nextRobot = Math.max(0, Math.min(roboticsProducts.length - 1, index));
+      const copyNodes = [robotKicker, robotTitle, robotText, robotSpecs];
+      const copyChanged = nextRobot !== activeRobot;
+      activeRobot = nextRobot;
+      const product = roboticsProducts[activeRobot];
+      const updateCopy = () => {
+        robotKicker.textContent = product.kicker;
+        robotTitle.textContent = product.name;
+        robotText.textContent = product.text;
+        robotSpecs.innerHTML = product.specs.map((spec) => `<span>${spec}</span>`).join('');
+      };
+
+      updateCopy();
+
+      if (copyChanged && animateCopy && window.gsap && !reduceMotion) {
+        gsap.killTweensOf(copyNodes);
+        gsap.fromTo(copyNodes,
+          { opacity: 0, y: 12 },
+          {
+          opacity: 1,
+          y: 0,
+          duration: .32,
+          stagger: .015,
+          ease: 'power2.out',
+          overwrite: true
+          }
+        );
+      }
+
+      document.querySelectorAll('.robot-card').forEach((card) => {
+        card.classList.toggle('is-active', Number(card.dataset.index) === activeRobot);
+      });
+      document.querySelectorAll('.robot-tab').forEach((tab) => {
+        tab.classList.toggle('is-active', Number(tab.dataset.index) === activeRobot);
+      });
+    }
+
+    function renderRobotics() {
+      robotTrack.innerHTML = roboticsProducts.map((product, index) => `
+        <article class="robot-card${index === 0 ? ' is-active' : ''}" data-index="${index}">
+          <div class="robot-image">
+            <img src="${product.image}" data-fallback="${product.fallback}" alt="${product.name} ${product.category}" loading="eager" decoding="async">
+          </div>
+          <div class="robot-body">
+            <small>${product.category}</small>
+            <h3>${product.name}</h3>
+            <p>${product.text}</p>
+          </div>
+        </article>
+      `).join('');
+
+      robotTabs.innerHTML = roboticsProducts.map((product, index) => `
+        <button class="robot-tab${index === 0 ? ' is-active' : ''}" type="button" data-index="${index}" data-count="${String(index + 1).padStart(2, '0')}">${product.name}</button>
+      `).join('');
+
+      document.querySelectorAll('.robot-tab').forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextIndex = Number(button.dataset.index);
+          setActiveRobot(nextIndex);
+          const card = document.querySelector(`.robot-card[data-index="${nextIndex}"]`);
+          if (robotScrollTrigger) {
+            const progress = nextIndex / (roboticsProducts.length - 1);
+            const top = robotScrollTrigger.start + (robotScrollTrigger.end - robotScrollTrigger.start) * progress;
+            if (smoothScroll && !reduceMotion) {
+              smoothScroll.scrollTo(top, {
+                duration: 1.05,
+                easing: (t) => 1 - Math.pow(1 - t, 3)
+              });
+            } else {
+              window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+            }
+          } else if (card) {
+            card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+      });
+
+      document.querySelectorAll('img[data-fallback]').forEach((img) => {
+        img.addEventListener('error', () => {
+          if (img.src.indexOf(img.dataset.fallback) === -1) img.src = img.dataset.fallback;
+        });
+      });
+    }
+
+    function setTestimonial(index) {
+      activeTestimonial = (index + testimonialCards.length) % testimonialCards.length;
+      testimonialCards.forEach((card, cardIndex) => {
+        card.classList.toggle('is-active', cardIndex === activeTestimonial);
+      });
+    }
+
+    function initAnimations() {
+      if (reduceMotion) {
+        document.querySelectorAll('.gsap-reveal').forEach((el) => {
+          el.style.opacity = 1;
+          el.style.transform = 'none';
+        });
+        return;
+      }
+
+      if (!window.gsap || !window.ScrollTrigger) {
+        document.querySelectorAll('.gsap-reveal').forEach((el) => {
+          el.style.opacity = 1;
+          el.style.transform = 'none';
+        });
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (window.Lenis && window.matchMedia('(min-width: 1281px)').matches) {
+        smoothScroll = new Lenis({
+          lerp: .075,
+          wheelMultiplier: .86,
+          smoothWheel: true
+        });
+        smoothScroll.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          smoothScroll.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      gsap.to('.hero-media img', {
+        scale: 1.045,
+        yPercent: 3,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .7 }
+      });
+
+      gsap.utils.toArray('.gsap-reveal').forEach((el) => {
+        gsap.fromTo(el,
+          { y: 22 },
+          {
+            y: 0,
+            duration: .65,
+            ease: 'power2.out',
+            immediateRender: false,
+            scrollTrigger: { trigger: el, start: 'top 84%' }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.section-wipe').forEach((line) => {
+        gsap.to(line, {
+          scaleX: 1,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: line.parentElement, start: 'top 72%' }
+        });
+      });
+
+      const canPinRobotics = window.matchMedia('(min-width: 1281px) and (min-height: 560px)').matches;
+      if (canPinRobotics && robotTrack && roboticsWindow) {
+        let trackDistance = 0;
+        let robotCards = [];
+        let robotImages = [];
+        let robotBodies = [];
+        const collectRobotPanels = () => {
+          robotCards = Array.from(robotTrack.querySelectorAll('.robot-card'));
+          robotImages = robotCards.map((card) => card.querySelector('img'));
+          robotBodies = robotCards.map((card) => card.querySelector('.robot-body'));
+        };
+        const updateDistance = () => {
+          collectRobotPanels();
+          const lastCard = robotCards[robotCards.length - 1];
+          if (!lastCard) {
+            trackDistance = Math.max(0, robotTrack.scrollWidth - roboticsWindow.clientWidth);
+            return trackDistance;
+          }
+          const centeredLast = lastCard.offsetLeft - Math.max(0, (roboticsWindow.clientWidth - lastCard.clientWidth) / 2);
+          trackDistance = Math.max(0, centeredLast);
+          return trackDistance;
+        };
+        const paintRobotMotion = (progress) => {
+          if (!robotCards.length) collectRobotPanels();
+          const center = roboticsWindow.clientWidth / 2;
+          robotCards.forEach((card, index) => {
+            const localCenter = card.offsetLeft + card.clientWidth / 2 - trackDistance * progress;
+            const signedDistance = (localCenter - center) / roboticsWindow.clientWidth;
+            const focus = Math.max(0, 1 - Math.abs(signedDistance) * 1.18);
+            const easedFocus = focus * focus * (3 - 2 * focus);
+            const y = (1 - easedFocus) * 18;
+            const rotateY = -signedDistance * 3.5;
+
+            gsap.set(card, {
+              opacity: .38 + easedFocus * .62,
+              scale: .92 + easedFocus * .08,
+              y,
+              rotateY,
+              zIndex: Math.round(easedFocus * 20)
+            });
+
+            if (robotImages[index]) {
+              gsap.set(robotImages[index], {
+                scale: 1.035,
+                xPercent: -signedDistance * 4.5
+              });
+            }
+
+            if (robotBodies[index]) {
+              gsap.set(robotBodies[index], {
+                opacity: Math.max(0, (easedFocus - .22) / .78),
+                y: (1 - easedFocus) * 24
+              });
+            }
+          });
+        };
+        const updateScrollDuration = () => {
+          const step = Math.min(window.innerHeight * .72, 620);
+          return Math.max(window.innerHeight * 1.25, step * (roboticsProducts.length - 1));
+        };
+        robotScrollTrigger = ScrollTrigger.create({
+          trigger: '#roboticsPin',
+          start: 'top 82px',
+          end: () => `+=${updateScrollDuration()}`,
+          pin: true,
+          scrub: .38,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onRefresh: (self) => {
+            updateDistance();
+            paintRobotMotion(self.progress || 0);
+          },
+          onUpdate: (self) => {
+            const index = Math.round(self.progress * (roboticsProducts.length - 1));
+            if (index !== activeRobot) setActiveRobot(index);
+            gsap.set(robotTrack, { x: -trackDistance * self.progress });
+            paintRobotMotion(self.progress);
+            if (robotProgress) gsap.set(robotProgress, { scaleX: self.progress });
+          },
+          onLeave: () => {
+            setActiveRobot(roboticsProducts.length - 1, false);
+            gsap.set(robotTrack, { x: -trackDistance });
+            paintRobotMotion(1);
+            if (robotProgress) gsap.set(robotProgress, { scaleX: 1 });
+          },
+          onLeaveBack: () => {
+            setActiveRobot(0, false);
+            gsap.set(robotTrack, { x: 0 });
+            paintRobotMotion(0);
+            if (robotProgress) gsap.set(robotProgress, { scaleX: 0 });
+          }
+        });
+      }
+    }
+
+    renderRobotics();
+    syncResponsiveHeader();
+    syncHeader();
+
+    menuToggle.addEventListener('click', () => {
+      const open = header.classList.toggle('is-open');
+      document.body.classList.toggle('no-scroll', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    mobilePanel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        header.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    roboticsWindow.addEventListener('scroll', () => {
+      if (robotScrollTrigger) return;
+      const cards = Array.from(document.querySelectorAll('.robot-card'));
+      const center = roboticsWindow.scrollLeft + roboticsWindow.clientWidth / 2;
+      const closest = cards.reduce((best, card) => {
+        const cardCenter = card.offsetLeft + card.clientWidth / 2;
+        const distance = Math.abs(center - cardCenter);
+        return distance < best.distance ? { index: Number(card.dataset.index), distance } : best;
+      }, { index: activeRobot, distance: Infinity });
+      if (closest.index !== activeRobot) setActiveRobot(closest.index);
+      if (robotProgress) {
+        const maxScroll = Math.max(1, roboticsWindow.scrollWidth - roboticsWindow.clientWidth);
+        robotProgress.style.transform = `scaleX(${Math.min(1, roboticsWindow.scrollLeft / maxScroll)})`;
+      }
+    }, { passive: true });
+
+    document.getElementById('testimonialPrev').addEventListener('click', () => setTestimonial(activeTestimonial - 1));
+    document.getElementById('testimonialNext').addEventListener('click', () => setTestimonial(activeTestimonial + 1));
+
+    dealerForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = dealerInput.value.trim();
+      dealerResult.innerHTML = query
+        ? `<small>Dealer search prepared</small><strong>${query}</strong><span>Open the official BouMatic dealer locator for live dealer information and contact details.</span>`
+        : '<small>Planning path</small><strong>Start with your location.</strong><span>Enter a place to prepare a dealer search and open the official BouMatic dealer page.</span>';
+    });
+
+    newsletterForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      newsletterMessage.textContent = newsletterEmail.value.trim()
+        ? 'Subscription path prepared for this concept page.'
+        : 'Enter an email address to prepare a subscription.';
+    });
+
+    window.addEventListener('scroll', syncHeader, { passive: true });
+    window.addEventListener('resize', syncResponsiveHeader);
+    window.addEventListener('load', initAnimations);
+  </script>
+</body>
+</html>
